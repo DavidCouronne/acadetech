@@ -1,28 +1,6 @@
-let contentfulConfig
+const config = require('./.contentful.json')
 
-try {
-  // Load the Contentful config from the .contentful.json
-  contentfulConfig = require('./.contentful')
-} catch (_) {}
-
-// Overwrite the Contentful config with environment variables if they exist
-contentfulConfig = {
-  spaceId: process.env.CONTENTFUL_SPACE_ID || contentfulConfig.spaceId,
-  accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN || contentfulConfig.accessToken,
-}
-
-const {
-  spaceId,
-  accessToken
-} = contentfulConfig
-
-if (!spaceId || !accessToken) {
-  throw new Error(
-    'Contentful spaceId and the delivery token need to be provided.'
-  )
-}
-
-const config = {
+module.exports = {
   /*
   ** Headers of the page
   */
@@ -93,11 +71,11 @@ const config = {
   ** in generate and browser context
   */
   env: {
-    CTF_SPACE_ID: contentfulConfig.CTF_SPACE_ID,
-    CTF_CDA_ACCESS_TOKEN: contentfulConfig.CTF_CDA_ACCESS_TOKEN,
-    CTF_PERSON_ID: contentfulConfig.CTF_PERSON_ID,
-    CTF_BLOG_POST_TYPE_ID: contentfulConfig.CTF_BLOG_POST_TYPE_ID
+    CTF_SPACE_ID: config.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
+    CTF_PERSON_ID: config.CTF_PERSON_ID,
+    CTF_BLOG_POST_TYPE_ID: config.CTF_BLOG_POST_TYPE_ID
   }
 }
 
-module.exports = config
+
