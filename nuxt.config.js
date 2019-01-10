@@ -1,8 +1,14 @@
 const pkg = require('./package')
 
+
 module.exports = {
   mode: 'universal',
-
+  /* env: {
+    CTF_SPACE_ID: configCtf.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: configCtf.CTF_CDA_ACCESS_TOKEN,
+    CTF_PERSON_ID: configCtf.CTF_PERSON_ID,
+    CTF_BLOG_POST_TYPE_ID: configCtf.CTF_BLOG_POST_TYPE_ID
+  }, */
   /*
   ** Headers of the page
   */
@@ -35,7 +41,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/vuetify'
+    '@/plugins/vuetify',
+    '@/plugins/contentful'
   ],
 
   /*
@@ -43,7 +50,8 @@ module.exports = {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Axios module configuration
@@ -51,12 +59,12 @@ module.exports = {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-  env: {
+  /* env: {
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
     CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN,
     CTF_PERSON_ID: process.env.CTF_PERSON_ID,
     CTF_BLOG_POST_TYPE_ID: process.env.CTF_BLOG_POST_TYPE_ID
-  },
+  }, */
 
   /*
   ** Build configuration
@@ -66,15 +74,10 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
+      config.node = {
+        fs: 'empty'
+      }    
+      
     }
   }
 }
