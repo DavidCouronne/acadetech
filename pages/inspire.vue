@@ -13,6 +13,7 @@
           </small>
         </footer>
       </blockquote>
+      
     </v-flex>
   </v-layout>
 </template>
