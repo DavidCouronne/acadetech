@@ -61,13 +61,5 @@ export default {
     Logo,
     VuetifyLogo
   },
-  computed: {
-        posts() {
-            return this.$store.state.posts.posts
-        }
-    },
-    async fetch({ store, params }) {
-        await store.dispatch('posts/getPosts', params.slug)
-    }
 }
 </script>
