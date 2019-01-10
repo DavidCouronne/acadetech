@@ -1,5 +1,6 @@
 const pkg = require('./package')
-
+require('dotenv').config()
+const contentful = require('contentful')
 
 module.exports = {
   mode: 'universal',
@@ -51,8 +52,12 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/markdownit'
   ],
+  markdownit: {
+    injected: true
+  },
   /*
   ** Axios module configuration
   */
@@ -78,6 +83,25 @@ module.exports = {
         fs: 'empty'
       }    
       
+    }
+  },
+  generate: {
+    routes: () => {
+      const client = contentful.createClient({
+          space:  process.env.CTF_SPACE_ID,
+          accessToken: process.env.CTF_CDA_ACCESS_TOKEN
+      });
+  
+      return client.getEntries({
+          content_type: 'blogPost'
+      }).then((response) => {
+          return response.items.map(entry => {
+              return {
+                  route: entry.fields.slug,
+                  payload: entry
+              };
+          });
+      });
     }
   }
 }
