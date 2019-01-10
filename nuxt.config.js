@@ -71,11 +71,11 @@ const config = {
       return Promise.all([
         // get all blog posts
         cdaClient.getEntries({
-          'content_type': ctfConfig.CTF_BLOG_POST_TYPE_ID
+          'content_type': contentfulConfig.CTF_BLOG_POST_TYPE_ID
         }),
         // get the blog post content type
-        cmaClient.getSpace(ctfConfig.CTF_SPACE_ID)
-          .then(space => space.getContentType(ctfConfig.CTF_BLOG_POST_TYPE_ID))
+        cmaClient.getSpace(contentfulConfig.CTF_SPACE_ID)
+          .then(space => space.getContentType(contentfulConfig.CTF_BLOG_POST_TYPE_ID))
       ])
       .then(([entries, postType]) => {
         return [
@@ -93,10 +93,10 @@ const config = {
   ** in generate and browser context
   */
   env: {
-    CTF_SPACE_ID: configcontent.CTF_SPACE_ID,
-    CTF_CDA_ACCESS_TOKEN: configcontent.CTF_CDA_ACCESS_TOKEN,
-    CTF_PERSON_ID: configcontent.CTF_PERSON_ID,
-    CTF_BLOG_POST_TYPE_ID: configcontent.CTF_BLOG_POST_TYPE_ID
+    CTF_SPACE_ID: contentfulConfig.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: contentfulConfig.CTF_CDA_ACCESS_TOKEN,
+    CTF_PERSON_ID: contentfulConfig.CTF_PERSON_ID,
+    CTF_BLOG_POST_TYPE_ID: contentfulConfig.CTF_BLOG_POST_TYPE_ID
   }
 }
 
