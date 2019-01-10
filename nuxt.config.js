@@ -1,6 +1,5 @@
 const pkg = require('./package')
 
-
 module.exports = {
   mode: 'universal',
 
@@ -44,8 +43,7 @@ module.exports = {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios',
-    ['@nuxtjs/dotenv', { systemvars: true }]
+    '@nuxtjs/axios'
   ],
   /*
   ** Axios module configuration
@@ -53,7 +51,6 @@ module.exports = {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-  
 
   /*
   ** Build configuration
@@ -63,10 +60,15 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      config.node = {
-	fs: 'empty'
-}
-      
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
     }
   }
 }
