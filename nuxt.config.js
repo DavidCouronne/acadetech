@@ -1,6 +1,9 @@
 const config = require('./.contentful.json')
 
 module.exports = {
+  modules: [   
+    '@nuxtjs/dotenv',
+ ],
   /*
   ** Headers of the page
   */
@@ -33,7 +36,7 @@ module.exports = {
   */
   plugins: [
     '~/plugins/contentful',
-    '@nuxtjs/dotenv'
+    
   ],
 
   /*
