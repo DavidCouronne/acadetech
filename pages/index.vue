@@ -8,8 +8,6 @@
       sm8
       md6>
       <div class="text-xs-center">
-        <logo/>
-        <vuetify-logo/>
       </div>
       <v-card>
         <v-card-title class="headline">Bienvenue sur AcadeTech</v-card-title>
@@ -17,8 +15,8 @@
           
             <h2>Derniers articles</h2>
     
-    <ul>
-        <li v-if="posts" v-for="(post, index) in posts" :key="index">
+    <ul v-if="posts">
+        <li  v-for="(post, index) in posts" :key="index">
             <nuxt-link :to="post.fields.slug">{{post.fields.title}}</nuxt-link>
         </li>
     </ul>
@@ -49,15 +47,12 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+
+
 
 
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  },
+  
   computed: {
         posts() {
             return this.$store.state.posts.posts

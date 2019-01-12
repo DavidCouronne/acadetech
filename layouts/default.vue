@@ -1,4 +1,5 @@
 <template>
+<!-- <v-app dark> -->
   <v-app>
     <v-navigation-drawer
       :mini-variant="miniVariant"
@@ -80,7 +81,7 @@
       :fixed="fixed"
       app
     >
-      <span>&copy; 2017</span>
+      <span>&copy; 2019</span>
     </v-footer>
   </v-app>
 </template>
@@ -93,13 +94,14 @@
         drawer: true,
         fixed: false,
         items: [
+          { icon: 'home', title: 'Accueil', to: '/' },
           { icon: 'apps', title: 'Welcome', to: '/' },
           { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }
         ],
         miniVariant: false,
         right: true,
         rightDrawer: false,
-        title: 'Vuetify.js'
+        title: 'Acadetech'
       }
     }
   }
