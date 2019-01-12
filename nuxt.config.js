@@ -21,6 +21,10 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
+      {rel: "stylesheet",
+      href: "https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css",
+      integrity: "sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y",
+      crossorigin: "anonymous"}, //katex css
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
@@ -35,7 +39,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '~/assets/style/app.styl'
+    '~/assets/style/app.styl',
+    '@assets/theme.css'
   ],
 
   /*

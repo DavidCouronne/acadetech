@@ -755,6 +755,36 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
+"@mathssyfy/plugin-markdown@^0.0.22":
+  version "0.0.22"
+  resolved "https://registry.yarnpkg.com/@mathssyfy/plugin-markdown/-/plugin-markdown-0.0.22.tgz#67549fa4a7e43e9972e7993ddd03e2af84269860"
+  integrity sha512-EjgNISYAd2VI1S1cWcOU0SZTWhYdhmbXbuBYj6kliUM1rh9P3+LVsJfLj+JvnwVMYfACsaiFnfq849cEjJb/1Q==
+  dependencies:
+    clipboard "^2.0.4"
+    clone "^2.1.2"
+    delegate "^3.2.0"
+    good-listener "^1.2.2"
+    lodash "^4.17.11"
+    markdown-it "^8.4.2"
+    markdown-it-abbr "^1.0.4"
+    markdown-it-container "^2.0.0"
+    markdown-it-deflist "^2.0.3"
+    markdown-it-emoji "^1.4.0"
+    markdown-it-footnote "^3.0.1"
+    markdown-it-ins "^2.0.0"
+    markdown-it-katex-newcommand "^1.0.7"
+    markdown-it-mark "^2.0.0"
+    markdown-it-prism "^2.0.1"
+    markdown-it-sub "^1.0.0"
+    markdown-it-sup "^1.0.0"
+    markdown-it-task-lists "^2.1.1"
+    markdown-it-toc-and-anchor "^4.2.0"
+    prismjs "^1.15.0"
+    select "^1.1.2"
+    tiny-emitter "^2.0.2"
+    unorm "^1.4.1"
+    uslug "^1.0.4"
+
 "@nuxt/babel-preset-app@2.3.4":
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/@nuxt/babel-preset-app/-/babel-preset-app-2.3.4.tgz#e8ef218a8ce58f854aa3c822bd5ebcb7c3d1c917"
@@ -1975,7 +2005,7 @@ cli-width@^2.0.0:
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-2.2.0.tgz#ff19ede8a9a5e579324147b0c11f0fbcbabed639"
   integrity sha1-/xnt6Kml5XkyQUewwR8PvLq+1jk=
 
-clipboard@^2.0.0:
+clipboard@^2.0.0, clipboard@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-2.0.4.tgz#836dafd66cf0fea5d71ce5d5b0bf6e958009112d"
   integrity sha512-Vw26VSLRpJfBofiVaFb/I8PVfdI1OxKcYShe6fm0sP/DtmiWQNCjhM/okTvdCo0G+lMMm1rMYbk4IK4x1X+kgQ==
@@ -1984,7 +2014,7 @@ clipboard@^2.0.0:
     select "^1.1.2"
     tiny-emitter "^2.0.0"
 
-clone@^2.1.0:
+clone@^2.1.0, clone@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
   integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
@@ -2688,7 +2718,7 @@ define-property@^2.0.2:
     is-descriptor "^1.0.2"
     isobject "^3.0.1"
 
-delegate@^3.1.2:
+delegate@^3.1.2, delegate@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/delegate/-/delegate-3.2.0.tgz#b66b71c3158522e8ab5744f720d8ca0c2af59166"
   integrity sha512-IofjkYBZaZivn0V8nnsMJGBr4jVLxHDheKSW88PyxS5QC4Vo9ZbZVvhzlSxY87fVq3STR6r+4cGepyHkcWOQSw==
@@ -7190,7 +7220,7 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tiny-emitter@^2.0.0:
+tiny-emitter@^2.0.0, tiny-emitter@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-2.0.2.tgz#82d27468aca5ade8e5fd1e6d22b57dd43ebdfb7c"
   integrity sha512-2NM0auVBGft5tee/OxP4PI3d8WItkDM+fPnaRAVo6xTDI2knbz9eC5ArWGqtGlYqiH3RU5yMpdyTTO7MguC4ow==
@@ -7378,7 +7408,7 @@ universalify@^0.1.0:
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
   integrity sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
 
-"unorm@>= 1.0.0":
+"unorm@>= 1.0.0", unorm@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/unorm/-/unorm-1.4.1.tgz#364200d5f13646ca8bcd44490271335614792300"
   integrity sha1-NkIA1fE2RsqLzURJAnEzVhR5IwA=
