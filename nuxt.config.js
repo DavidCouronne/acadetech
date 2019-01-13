@@ -4,15 +4,6 @@ const contentful = require('contentful')
 
 module.exports = {
   mode: 'universal',
-  /* env: {
-    CTF_SPACE_ID: configCtf.CTF_SPACE_ID,
-    CTF_CDA_ACCESS_TOKEN: configCtf.CTF_CDA_ACCESS_TOKEN,
-    CTF_PERSON_ID: configCtf.CTF_PERSON_ID,
-    CTF_BLOG_POST_TYPE_ID: configCtf.CTF_BLOG_POST_TYPE_ID
-  }, */
-  /*
-  ** Headers of the page
-  */
   head: {
     title: pkg.name,
     meta: [
@@ -40,7 +31,9 @@ module.exports = {
   */
   css: [
     '~/assets/style/app.styl',
-    '@assets/theme.css'
+    "@assets/prism/prism-tomorrow.css",
+    // '@assets/theme.css',
+    '@mathssyfy/theme/lib/theme.css'
   ],
 
   /*
@@ -69,12 +62,7 @@ module.exports = {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-  /* env: {
-    CTF_SPACE_ID: process.env.CTF_SPACE_ID,
-    CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN,
-    CTF_PERSON_ID: process.env.CTF_PERSON_ID,
-    CTF_BLOG_POST_TYPE_ID: process.env.CTF_BLOG_POST_TYPE_ID
-  }, */
+  
 
   /*
   ** Build configuration

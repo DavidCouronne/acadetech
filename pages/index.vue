@@ -1,66 +1,106 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center>
-    <v-flex
-      xs12
-      sm8
-      md6>
-      <div class="text-xs-center">
-      </div>
+  <div>
+    <NavLinks/>
+    <div class="language-md extra-class">
+            <pre class="language-md">
+              <code>// .docs/exercices/README.md
+<span class="token title important"><span class="token punctuation">#</span> Quelques exercices</span>
+...
+</code>
+</pre>
+</div>
+    <v-flex xs12 sm8 md6>
+      <div class="text-xs-center"></div>
       <v-card>
         <v-card-title class="headline">Bienvenue sur AcadeTech</v-card-title>
         <v-card-text>
+          <h2>Derniers articles</h2>
           
-            <h2>Derniers articles</h2>
-    
-    <ul v-if="posts">
-        <li  v-for="(post, index) in posts" :key="index">
-            <nuxt-link :to="post.fields.slug">{{post.fields.title}}</nuxt-link>
-        </li>
-    </ul>
-          
+
+          <ul v-if="posts">
+            <li v-for="(post, index) in posts" :key="index">
+              <nuxt-link :to="post.fields.slug">{{post.fields.title}}</nuxt-link>
+            </li>
+          </ul>
+
+          <h2>Routes</h2>
+          <ul v-if="navlinks">
+            <li v-for="(navlink, index) in navlinks" :key="index">
+              <nuxt-link
+                :to="navlink.fields.route"
+              >{{navlink.fields.text}} et {{navlink.fields.icon}}</nuxt-link>
+            </li>
+          </ul>
+          <h2>test</h2>
+          <ul>
+            <li v-for="(navlink, index) in tests" :key="index">
+              <p v-if="navlink.link">{{navlink.text}} et {{navlink.link}}</p>
+              <ul v-else>
+            <li v-for="(sublink, index) in navlink.items" :key="index">
+              <p v-if="sublink.link">{{sublink.text}} et {{sublink.link}}</p>
+            </li>
+          </ul>
+            </li>
+          </ul>
+
+          <h2>Routes config</h2>
+          <ul>
+            <li v-for="(navlink, index) in tests" :key="index">
+              <!-- <p v-if="navlink.link">{{navlink.text}} et {{navlink.link}}</p> -->
+              <NavLink v-if="navlink.link" :item = navlink />
+              <ul v-else>
+            <li v-for="(sublink, index) in navlink.items" :key="index">
+              <p v-if="sublink.link">{{sublink.text}} et {{sublink.link}}</p>
+            </li>
+          </ul>
+            </li>
+          </ul>
+
           <div class="text-xs-right">
-            <em><small>&mdash; David Couronné</small></em>
+            <em>
+              <small>&mdash; David Couronné</small>
+            </em>
           </div>
           <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank">Nuxt Documentation</a>
+          <a href="https://nuxtjs.org/" target="_blank">Nuxt Documentation</a>
           <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank">Nuxt GitHub</a>
+          <a href="https://github.com/nuxt/nuxt.js" target="_blank">Nuxt GitHub</a>
         </v-card-text>
         <v-card-actions>
           <v-spacer/>
-          <v-btn
-            color="primary"
-            flat
-            nuxt
-            to="/inspire">Continue</v-btn>
+          <v-btn color="primary" flat nuxt to="/inspire">Continue</v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
-  </v-layout>
+ </div>
 </template>
 
 <script>
-
-
-
+import navBar from '../plugins/navlinks'
+import NavLink from '~/components/NavLink'
+import NavLinks from '~/components/NavLinks'
 
 export default {
-  
+  components: {
+    NavLink,
+    NavLinks
+  },
+
   computed: {
-        posts() {
-            return this.$store.state.posts.posts
-        }
+    posts() {
+      return this.$store.state.posts.posts
     },
-    async fetch({ store, params }) {
-        await store.dispatch('posts/getPosts', params.slug)
+    navlinks() {
+      return this.$store.state.navlinks.navlinks
+    },
+    tests() {
+      return navBar.themeConfig.nav
     }
+  },
+  async fetch({ store, params }) {
+    await store.dispatch('posts/getPosts', params.slug)
+    await store.dispatch('navlinks/getNavLinks', params.slug)
+  }
 }
 </script>
 
