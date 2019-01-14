@@ -1,6 +1,7 @@
 <template>
 <!-- <v-app dark> -->
   <v-app>
+    <NavLinks/>
     <nuxt />
   </v-app>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavLinks/>
+    
     <div class="language-md extra-class">
             <pre class="language-md">
               <code>// .docs/exercices/README.md
@@ -22,39 +22,8 @@
               <nuxt-link :to="post.fields.slug">{{post.fields.title}}</nuxt-link>
             </li>
           </ul>
+          
 
-          <h2>Routes</h2>
-          <ul v-if="navlinks">
-            <li v-for="(navlink, index) in navlinks" :key="index">
-              <nuxt-link
-                :to="navlink.fields.route"
-              >{{navlink.fields.text}} et {{navlink.fields.icon}}</nuxt-link>
-            </li>
-          </ul>
-          <h2>test</h2>
-          <ul>
-            <li v-for="(navlink, index) in tests" :key="index">
-              <p v-if="navlink.link">{{navlink.text}} et {{navlink.link}}</p>
-              <ul v-else>
-            <li v-for="(sublink, index) in navlink.items" :key="index">
-              <p v-if="sublink.link">{{sublink.text}} et {{sublink.link}}</p>
-            </li>
-          </ul>
-            </li>
-          </ul>
-
-          <h2>Routes config</h2>
-          <ul>
-            <li v-for="(navlink, index) in tests" :key="index">
-              <!-- <p v-if="navlink.link">{{navlink.text}} et {{navlink.link}}</p> -->
-              <NavLink v-if="navlink.link" :item = navlink />
-              <ul v-else>
-            <li v-for="(sublink, index) in navlink.items" :key="index">
-              <p v-if="sublink.link">{{sublink.text}} et {{sublink.link}}</p>
-            </li>
-          </ul>
-            </li>
-          </ul>
 
           <div class="text-xs-right">
             <em>
@@ -76,7 +45,6 @@
 </template>
 
 <script>
-import navBar from '../plugins/navlinks'
 import NavLink from '~/components/NavLink'
 import NavLinks from '~/components/NavLinks'
 
@@ -93,9 +61,7 @@ export default {
     navlinks() {
       return this.$store.state.navlinks.navlinks
     },
-    tests() {
-      return navBar.themeConfig.nav
-    }
+    
   },
   async fetch({ store, params }) {
     await store.dispatch('posts/getPosts', params.slug)

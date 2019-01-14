@@ -4,8 +4,9 @@
     	<h1 class="single-post__title">
             {{currentPost.fields.title}}
         </h1>
+        <!-- <div v-html="$md.render(currentPost.fields.body)"></div> -->
         <!-- <div class="single-post__content" v-html="$md.render(currentPost.fields.body)"></div> -->
-        <markdown>{{currentPost.fields.body}}</markdown>
+        <markdown>{{currentPost.fields.body}}</markdown> 
     </div>
     <p v-else class="single-post__loading">
         Loading

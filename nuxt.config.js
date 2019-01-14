@@ -12,12 +12,12 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      {rel: "stylesheet",
+      /* {rel: "stylesheet",
       href: "https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css",
       integrity: "sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y",
       crossorigin: "anonymous"}, //katex css
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' } */
     ]
   },
 
@@ -30,9 +30,9 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '~/assets/style/app.styl',
-    "@assets/prism/prism-tomorrow.css",
-    // '@assets/theme.css',
+    // '~/assets/style/app.styl',
+    // "@assets/prism/prism-tomorrow.css",
+    '@assets/theme.css',
     '@mathssyfy/theme/lib/theme.css'
   ],
 
@@ -40,7 +40,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/vuetify',
+    // '@/plugins/vuetify',
     '@/plugins/contentful'
   ],
 
@@ -51,7 +51,7 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
-    '@nuxtjs/markdownit'
+    // '~/markdown/index.js'
   ],
   markdownit: {
     injected: true

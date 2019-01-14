@@ -8,16 +8,15 @@
 
 <script>
 import NavLink from '~/components/NavLink'
-import navLinks from '../plugins/navlinks'
-
+import {themeConfig} from '../plugins/userConfig'
 export default {
   components: {
     NavLink
   },
   computed: {
     userLinks() {
-      return navLinks.themeConfig.nav
-    }
+      return themeConfig.nav
+    },
   }
 }
 </script>
