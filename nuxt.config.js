@@ -1,6 +1,8 @@
+const { markdownConfig, generateConfig } = require("./generateConfig");
+
 const pkg = require('./package')
 require('dotenv').config()
-const contentful = require('contentful')
+
 
 module.exports = {
   mode: 'universal',
@@ -29,12 +31,10 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [
-    // '~/assets/style/app.styl',
-    // "@assets/prism/prism-tomorrow.css",
-    '@assets/theme.css',
-    '@mathssyfy/theme/lib/theme.css'
-  ],
+ css: [
+  '@/assets/styles/theme.styl',
+  'prismjs/themes/prism-dark.css'
+],
 
   /*
   ** Plugins to load before mounting the App
@@ -51,11 +51,10 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
+    '@mathssyfy/markdown'
     // '~/markdown/index.js'
   ],
-  markdownit: {
-    injected: true
-  },
+  markdownit: markdownConfig(),
   /*
   ** Axios module configuration
   */
@@ -78,23 +77,6 @@ module.exports = {
       
     }
   },
-  generate: {
-    routes: () => {
-      const client = contentful.createClient({
-          space:  process.env.CTF_SPACE_ID,
-          accessToken: process.env.CTF_CDA_ACCESS_TOKEN
-      });
-  
-      return client.getEntries({
-          content_type: 'blogPost'
-      }).then((response) => {
-          return response.items.map(entry => {
-              return {
-                  route: entry.fields.slug,
-                  payload: entry
-              };
-          });
-      });
-    }
-  }
+  generate: generateConfig()
 }
+
