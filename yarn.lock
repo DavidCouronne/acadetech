@@ -677,59 +677,67 @@
   dependencies:
     markdown-it "^8.4.2"
 
-"@mathssyfy/markdown-it-highlightlines@^1.2.12":
-  version "1.2.12"
-  resolved "https://registry.yarnpkg.com/@mathssyfy/markdown-it-highlightlines/-/markdown-it-highlightlines-1.2.12.tgz#83508591a4306d7e80f8ecce8af1480bbf782b03"
-  integrity sha512-mmLjrGElb9HZZxzezeNcWkOzp7ZT5uwKIX2yY5aUvyIOpkgLxzREsrSmP/z6/NtyB2uXh4YF/Sqr0f5Yq0shXQ==
+"@mathssyfy/markdown-it-highlightlines@^1.3.9":
+  version "1.3.9"
+  resolved "https://registry.yarnpkg.com/@mathssyfy/markdown-it-highlightlines/-/markdown-it-highlightlines-1.3.9.tgz#84a89ed2e2eb82da37722d098cc8e0fc5db3da3a"
+  integrity sha512-T1B0LixeRVwIS8A5DW15QZrj2uUmJ6azth6nAkgx95f14cRSgIiCEoG8C+SsCE3XrGItT8c1G40nN63kSJvWSg==
   dependencies:
-    "@mathssyfy/markdown-it-prewrapper" "^1.2.12"
+    "@mathssyfy/markdown-it-prewrapper" "^1.3.9"
 
-"@mathssyfy/markdown-it-linenumbers@^1.2.12":
-  version "1.2.12"
-  resolved "https://registry.yarnpkg.com/@mathssyfy/markdown-it-linenumbers/-/markdown-it-linenumbers-1.2.12.tgz#cfe16216d065c7d86783665a3544857ef6413025"
-  integrity sha512-8TduXoNyhKgL6KCjkSXdYKAO+qQRrkxp03iuWayWT9P0pD65vUijAOjECnhEseh4ICB337sMgIo2sZa1imKSnw==
+"@mathssyfy/markdown-it-linenumbers@^1.3.10":
+  version "1.3.10"
+  resolved "https://registry.yarnpkg.com/@mathssyfy/markdown-it-linenumbers/-/markdown-it-linenumbers-1.3.10.tgz#0049e1465fded6f2b50c7c40a6a14f2ead66951d"
+  integrity sha512-gsyqRboYHVAJjNFvoQN7G6WcEERNe8l2lfH3udeyeb7UOBIv8DE2tN6QBTmXyNUvDcFqyLm1LTsHo2ONBTdQ6w==
   dependencies:
-    "@mathssyfy/markdown-it-prewrapper" "^1.2.12"
+    "@mathssyfy/markdown-it-prewrapper" "^1.3.9"
 
-"@mathssyfy/markdown-it-loader@^1.2.12":
-  version "1.2.12"
-  resolved "https://registry.yarnpkg.com/@mathssyfy/markdown-it-loader/-/markdown-it-loader-1.2.12.tgz#0b495449b89f960c267f4c4d1d3abbc2e7dd5dda"
-  integrity sha512-gTy2rg4HzqMM5PywVWfGXxzhYObQ/QZ+NlXH+RBkAtKIkqQrEZ0palGo4o4OxgCrdOkXcPnRxwihAnTJgDRDMA==
+"@mathssyfy/markdown-it-loader@^1.3.0", "@mathssyfy/markdown-it-loader@^1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@mathssyfy/markdown-it-loader/-/markdown-it-loader-1.3.1.tgz#76667b819cd30513666dd2e8d7c5928cbb441681"
+  integrity sha512-EqYfqTYryH7yHxYV4a23Kv3kKr4Na1VIQVFtXjfDZVgqDVxXPwBnBrQ9WvBBsOdCqg/BSc/zs5wPpCKJ4LNRKg==
+  dependencies:
+    loader-utils "^1.2.3"
+    markdown-it "^8.4.2"
+    prismjs "^1.15.0"
 
-"@mathssyfy/markdown-it-prewrapper@^1.2.12":
-  version "1.2.12"
-  resolved "https://registry.yarnpkg.com/@mathssyfy/markdown-it-prewrapper/-/markdown-it-prewrapper-1.2.12.tgz#18b60563f8638ae87bb31d6e8a3567b05510e3ca"
-  integrity sha512-KoXDSXKE6j2x89tg+jcgk8wAiy40ELvOe421ogwEtUKch5jDxvFU9u+vrspWNFfLJLBv1yS73o0AxnMBl4Ikwg==
+"@mathssyfy/markdown-it-prewrapper@^1.3.9":
+  version "1.3.9"
+  resolved "https://registry.yarnpkg.com/@mathssyfy/markdown-it-prewrapper/-/markdown-it-prewrapper-1.3.9.tgz#0559937cf26b19f766af14be96b5baa9f6cf7f18"
+  integrity sha512-SlVm3AQFabCpEGyrySfm9wQf0SeqEAXB//BBLsuEurwUIfNMX6JQOoeBHyLDYFuEr6U+6s7nYbGzaA4Zr3kvDA==
 
-"@mathssyfy/markdown-it-theme@^1.2.15":
-  version "1.2.15"
-  resolved "https://registry.yarnpkg.com/@mathssyfy/markdown-it-theme/-/markdown-it-theme-1.2.15.tgz#d1ab52e60b8e9a7beddb858de3ef58de0263e2df"
-  integrity sha512-uHtQUpMbbcngtOKort/zQN2svcMUNF8Xh+OIHNoqIV/gDwk1fVSaYSH/aUl7etbG5bE4BfO8O7N7CIOrXtK1Dw==
+"@mathssyfy/markdown-it-theme@^1.3.10":
+  version "1.3.10"
+  resolved "https://registry.yarnpkg.com/@mathssyfy/markdown-it-theme/-/markdown-it-theme-1.3.10.tgz#df47c73e595f1542831b62c2a94e7aec91743742"
+  integrity sha512-3M5zMuibYq29m/NXitpLEsSk/f8WUUb+xeu9dHxOP89OtAAv6HaBsAzgMD27HGNlKXGqcEyABEdl4zidoRzR9Q==
   dependencies:
     "@mathssyfy/markdown-it-component" "^1.2.14"
-    "@mathssyfy/markdown-it-highlightlines" "^1.2.12"
-    "@mathssyfy/markdown-it-linenumbers" "^1.2.12"
-    "@mathssyfy/markdown-it-prewrapper" "^1.2.12"
+    "@mathssyfy/markdown-it-highlightlines" "^1.3.9"
+    "@mathssyfy/markdown-it-linenumbers" "^1.3.10"
+    "@mathssyfy/markdown-it-prewrapper" "^1.3.9"
     markdown-it "^8.4.2"
     markdown-it-anchor "^5.0.2"
     markdown-it-chain "^1.3.0"
     markdown-it-emoji "^1.4.0"
     markdown-it-table-of-contents "^0.4.3"
 
-"@mathssyfy/markdown@^1.2.12":
-  version "1.2.12"
-  resolved "https://registry.yarnpkg.com/@mathssyfy/markdown/-/markdown-1.2.12.tgz#dd91ee7c88737f2374f84a52e151e8a95fa97686"
-  integrity sha512-y5BQp8UpSqYLpoXPyN0XrPS7p9F/DhVuy5MrNZe0AY242goYpCWm54VgHuvz7rQN0RspzUoIs0MLAlW6ZIKTEg==
+"@mathssyfy/markdown@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@mathssyfy/markdown/-/markdown-1.3.0.tgz#e3e80c1ce409f60337bb8d640b9955f43ec5ef11"
+  integrity sha512-ltaPZgIE08b31YDpnhv8UuPVRNalGpnA7N11OCjsz2DGT0NxbPYY/jSSxbCUyWJJwCQ/bODc7lBdPFILE0hZJQ==
   dependencies:
-    "@mathssyfy/markdown-it-loader" "^1.2.12"
+    "@mathssyfy/markdown-it-loader" "^1.3.0"
     raw-loader "^1.0.0"
 
-"@mathssyfy/plugin-markdown@^1.2.12":
-  version "1.2.12"
-  resolved "https://registry.yarnpkg.com/@mathssyfy/plugin-markdown/-/plugin-markdown-1.2.12.tgz#4f66b929149280a7d86b628d2f45e8e8343df858"
-  integrity sha512-q/jftbfLsSZxWBLPePYvw6Hf9izN0PXNyxAqdQkuuvQ8tVc0/Wcih7dkNU+Vs7gm5ABWHeeTz0TDpRinOzPe2w==
+"@mathssyfy/plugin-markdown@^1.3.10":
+  version "1.3.10"
+  resolved "https://registry.yarnpkg.com/@mathssyfy/plugin-markdown/-/plugin-markdown-1.3.10.tgz#5bddb4efb7a70b0a995823fa943fa9276a3f3174"
+  integrity sha512-N1covPEANGX7RwhFYCgEBmt0FUbv/IUUvjsLh16JuPJrc7ZgFBHCC2u2UtKYSfFPFriCkS0O63JVjsDgfxq8bg==
   dependencies:
-    "@mathssyfy/markdown-it-prewrapper" "^1.2.12"
+    "@mathssyfy/markdown-it-component" "^1.2.14"
+    "@mathssyfy/markdown-it-highlightlines" "^1.3.9"
+    "@mathssyfy/markdown-it-loader" "^1.3.1"
+    "@mathssyfy/markdown-it-prewrapper" "^1.3.9"
+    "@mathssyfy/markdown-it-theme" "^1.3.10"
     clipboard "^2.0.4"
     clone "^2.1.2"
     delegate "^3.2.0"
@@ -743,6 +751,7 @@
     markdown-it-emoji "^1.4.0"
     markdown-it-footnote "^3.0.1"
     markdown-it-ins "^2.0.0"
+    markdown-it-katex "^2.0.3"
     markdown-it-katex-newcommand "^1.0.7"
     markdown-it-mark "^2.0.0"
     markdown-it-prism "^2.0.1"
@@ -752,7 +761,10 @@
     markdown-it-task-lists "^2.1.1"
     markdown-it-toc-and-anchor "^4.2.0"
     prismjs "^1.15.0"
+    raw-loader "^1.0.0"
     select "^1.1.2"
+    stylus "^0.54.5"
+    stylus-loader "^3.0.2"
     tiny-emitter "^2.0.2"
     unorm "^1.4.1"
     uslug "^1.0.4"
@@ -3003,10 +3015,10 @@ eslint-visitor-keys@^1.0.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
   integrity sha512-qzm/XxIbxm/FHyH341ZrbnMUpe+5Bocte9xkmFMzPMjRaZMcXww+MpBptFvtU+79L362nqiLhekCxCxDPaUMBQ==
 
-eslint@^5.0.1:
-  version "5.12.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-5.12.0.tgz#fab3b908f60c52671fb14e996a450b96c743c859"
-  integrity sha512-LntwyPxtOHrsJdcSwyQKVtHofPHdv+4+mFwEe91r2V13vqpM8yLr7b1sW+Oo/yheOPkWYsYlYJCkzlFAt8KV7g==
+eslint@^5.12.1:
+  version "5.12.1"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-5.12.1.tgz#5ca9931fb9029d04e7be92b03ce3b58edfac7e3b"
+  integrity sha512-54NV+JkTpTu0d8+UYSA8mMKAG4XAsaOrozA9rCW7tgneg1mevcL7wIotPC+fZ0SkWwdhNqoXoxnQCTBp7UvTsg==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     ajv "^6.5.3"
@@ -4299,6 +4311,13 @@ katex@^0.10.0:
   dependencies:
     commander "^2.16.0"
 
+katex@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/katex/-/katex-0.6.0.tgz#12418e09121c05c92041b6b3b9fb6bab213cb6f3"
+  integrity sha1-EkGOCRIcBckgQbazuftrqyE8tvM=
+  dependencies:
+    match-at "^0.1.0"
+
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
@@ -4396,7 +4415,7 @@ loader-utils@^0.2.16:
     json5 "^0.5.0"
     object-assign "^4.0.1"
 
-loader-utils@^1.0.2, loader-utils@^1.1.0:
+loader-utils@^1.0.2, loader-utils@^1.1.0, loader-utils@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.2.3.tgz#1ff5dc6911c9f0a062531a4c04b609406108c2c7"
   integrity sha512-fkpz8ejdnEMG3s37wGL07iSBDg99O9D5yflE9RGNH3hRdx9SOwYfnGYdZOUIZitN8E+E2vkq3MUMYMvPYl5ZZA==
@@ -4573,6 +4592,13 @@ markdown-it-katex-newcommand@^1.0.7:
   dependencies:
     katex "^0.10.0"
 
+markdown-it-katex@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/markdown-it-katex/-/markdown-it-katex-2.0.3.tgz#d7b86a1aea0b9d6496fab4e7919a18fdef589c39"
+  integrity sha1-17hqGuoLnWSW+rTnkZoY/e9YnDk=
+  dependencies:
+    katex "^0.6.0"
+
 markdown-it-mark@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/markdown-it-mark/-/markdown-it-mark-2.0.0.tgz#46a1aa947105aed8188978e0a016179e404f42c7"
@@ -4628,6 +4654,11 @@ markdown-it@^8.3.1, markdown-it@^8.4.2:
     linkify-it "^2.0.0"
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
+
+match-at@^0.1.0:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/match-at/-/match-at-0.1.1.tgz#25d040d291777704d5e6556bbb79230ec2de0540"
+  integrity sha512-h4Yd392z9mST+dzc+yjuybOGFNOZjmXIPKWjxBd1Bb23r4SmDOsk2NYCU2BMUBGbSpZqwVsZYNq26QS3xfaT3Q==
 
 md5.js@^1.3.4:
   version "1.3.5"

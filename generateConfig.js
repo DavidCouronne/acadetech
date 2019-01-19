@@ -1,5 +1,4 @@
 const contentful = require('contentful');
-const { renderHighlight } = require("@mathssyfy/markdown-it-loader/lib/renderHighlight.js");
 function generateConfig() {
   return {
     routes: () => {
@@ -23,10 +22,7 @@ function generateConfig() {
 exports.generateConfig = generateConfig;
 function markdownConfig() {
   return {
-    preset: 'default',
-    linkify: true,
-    breaks: true,
-    highlight: renderHighlight,
+    injected: true,
     use: [
         '@mathssyfy/markdown-it-component',
         '@mathssyfy/markdown-it-highlightlines',

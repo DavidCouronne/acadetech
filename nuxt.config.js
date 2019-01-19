@@ -1,4 +1,4 @@
-const { markdownConfig, generateConfig } = require("./generateConfig");
+const { generateConfig } = require("./generateConfig");
 
 const pkg = require('./package')
 require('dotenv').config()
@@ -51,10 +51,20 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
-    '@mathssyfy/markdown'
-    // '~/markdown/index.js'
+    '@nuxtjs/markdownit'
   ],
-  markdownit: markdownConfig(),
+  markdownit: {
+    injected: true,
+    use: [
+      'markdown-it-prism',
+      // '@mathssyfy/markdown-it-prewrapper'
+      '@mathssyfy/markdown-it-highlightlines',
+      '@mathssyfy/markdown-it-prewrapper',
+       '@mathssyfy/markdown-it-linenumbers'
+      
+    ]
+  },
+  
   /*
   ** Axios module configuration
   */

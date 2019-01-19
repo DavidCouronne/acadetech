@@ -12,9 +12,9 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@mathssyfy/markdown": "^1.2.12",
-    "@mathssyfy/markdown-it-theme": "^1.2.15",
-    "@mathssyfy/plugin-markdown": "^1.2.12",
+    "@mathssyfy/markdown": "^1.3.0",
+    "@mathssyfy/markdown-it-theme": "^1.3.10",
+    "@mathssyfy/plugin-markdown": "^1.3.10",
     "@mathssyfy/theme": "^1.0.0",
     "@nuxtjs/axios": "^5.0.0",
     "@nuxtjs/dotenv": "^1.3.0",
@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.0.1",
+    "eslint": "^5.12.1",
     "eslint-config-prettier": "^3.5.0",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-prettier": "3.0.1",
