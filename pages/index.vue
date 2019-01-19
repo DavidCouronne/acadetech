@@ -1,14 +1,7 @@
 <template>
   <div>
     
-    <div class="language-md extra-class">
-            <pre class="language-md">
-              <code>// .docs/exercices/README.md
-<span class="token title important"><span class="token punctuation">#</span> Quelques exercices</span>
-...
-</code>
-</pre>
-</div>
+    
     <v-flex xs12 sm8 md6>
       <div class="text-xs-center"></div>
       <v-card>

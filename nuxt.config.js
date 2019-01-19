@@ -14,12 +14,12 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      /* {rel: "stylesheet",
+       {rel: "stylesheet",
       href: "https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css",
       integrity: "sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y",
       crossorigin: "anonymous"}, //katex css
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' } */
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
   },
 
@@ -41,7 +41,8 @@ module.exports = {
   */
   plugins: [
     // '@/plugins/vuetify',
-    '@/plugins/contentful'
+    '@/plugins/contentful',
+    '~/plugins/global-components-loader.js',
   ],
 
   /*
@@ -56,11 +57,16 @@ module.exports = {
   markdownit: {
     injected: true,
     use: [
+      '@mathssyfy/markdown-it-component',
       'markdown-it-prism',
-      // '@mathssyfy/markdown-it-prewrapper'
       '@mathssyfy/markdown-it-highlightlines',
       '@mathssyfy/markdown-it-prewrapper',
-       '@mathssyfy/markdown-it-linenumbers'
+      '@mathssyfy/markdown-it-anchor',
+      'markdown-it-table-of-contents',
+      'markdown-it-emoji',
+      '@mathssyfy/markdown-it-container',
+      'markdown-it-katex-newcommand',
+      '@mathssyfy/markdown-it-linenumbers'
       
     ]
   },
