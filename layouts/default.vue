@@ -1,6 +1,10 @@
 <template>
   <div class="theme-container">
     <Navbar/>
+    <no-ssr>
+    <ButtonBackToTop/>
+    </no-ssr>
+
     
 
     
