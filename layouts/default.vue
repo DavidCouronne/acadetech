@@ -1,9 +1,7 @@
 <template>
   <div class="theme-container">
     <Navbar/>
-    <nuxt-link to="/">Accueil</nuxt-link>
-    <nuxt-link to="/hello">Hello</nuxt-link>
-    <nuxt-link to="/">About</nuxt-link>
+    
 
     
 

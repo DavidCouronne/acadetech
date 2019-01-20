@@ -11,19 +11,11 @@ module.exports = {
           },
           {
             text: 'Ressources Dev',
-            link: '/docs/informatique/HowTo/'
+            link: '/dev/'
           },
           {
-            text: 'Vuepress',
-            link: '/docs/informatique/Vuepress/'
-          },
-          {
-            text: 'Cours Maths',
-            link: '/docs/maths/cours/'
-          },
-          {
-            text: 'Sujets Maths',
-            link: '/docs/maths/sujets/'
+            text: 'Maths',
+            link: '/cours/'
           },
       ],
     }

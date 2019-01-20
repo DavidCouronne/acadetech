@@ -34,10 +34,14 @@ import cheerio from 'cheerio'
 
 export default {
   computed: {
+    slug() {
+return this.$store.state.content.slug
+    },
     subnav() {
-      const $ = cheerio.load(this.$md.render(this.$store.state.post.currentPost.fields.body))
+      const $ = cheerio.load(this.$store.state.content.currentContent)
       let pageNav = []
-      let navItem =""
+      let navItem ='<ul class="sidebar-links" >\n'
+      let slug = this.slug
       $('h2, h3').each((i, elem) => {
         let $elem = $(elem)
         if ($elem[0].name == 'h2') {
@@ -46,7 +50,8 @@ export default {
             text: $elem.text(),
             children: []
           })
-          navItem = navItem + `<a href=${'#'+$elem.attr('id')}>${$elem.text()}</a>\n`
+          navItem = navItem + `<li><a class='sidebar-link' href=${'#'+$elem.attr('id')}>${$elem.text().replace('# ','')}</a></li>\n`
+          
         } else {
           pageNav[pageNav.length - 1].children.push({
             id: `#${$elem.attr('id')}`,
@@ -54,7 +59,7 @@ export default {
           })
         }
       })
-      return navItem
+      return navItem + '</ul>'
       // return pageNav
     }
   }
@@ -135,3 +140,4 @@ export default {
 }
 
 </style>
+

@@ -6,8 +6,7 @@
     <div class="links">
       <div class="can-hide">
         <nav class="nav-links">
-          <nuxt-link class="nav-link" to="/cours">Maths</nuxt-link>
-          <nuxt-link class="nav-link" to="/dev">Développement</nuxt-link>
+          <NavLinks/>
         </nav>
       </div>
     </div>
