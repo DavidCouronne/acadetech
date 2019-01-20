@@ -1,13 +1,14 @@
 <template>
-    <div class="single-post">
+    <div class="page">
         <Sidebar>
-      <slot name="sidebar-top" slot="top"/>
+      <slot name="top"/>
       <slot name="sidebar-bottom" slot="bottom"/>
     </Sidebar>
     
     	<h1 class="single-post__title">
             {{currentCours.fields.titre}}
         </h1>
+        <div v-html="content"></div>
         <!-- <ul class="sidebar__subdocs" >
               <li v-bind:key="navitem.id" v-for="navitem in subnav">
                 
@@ -23,7 +24,7 @@
         <!-- <div v-html="$md.render(currentPost.fields.body)"></div> -->
         <!-- <div class="single-post__content" v-html="$md.render(currentPost.fields.body)"></div> -->
         <!-- <markdown>{{currentPost.fields.body}}</markdown>  -->
-        <div v-html="content"></div>
+        
         <!-- <div v-html="currentPost.fields.body"></div> -->
     
 </div>
@@ -36,8 +37,10 @@
 <script>
 import Markdown from '@mathssyfy/plugin-markdown'
 import cheerio from 'cheerio'
+import { resolvePage, normalize, outboundRE, endingSlashRE } from '../../util'
 
 export default {
+    props: ['sidebarItems'],
     components: {
     Markdown
   },
