@@ -38,14 +38,10 @@
 </template>
 
 <script>
-import NavLink from '~/components/NavLink'
-import NavLinks from '~/components/NavLinks'
+
 
 export default {
-  components: {
-    NavLink,
-    NavLinks
-  },
+  
 
   computed: {
     posts() {

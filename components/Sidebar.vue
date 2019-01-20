@@ -1,28 +1,11 @@
 <template>
   <div class="sidebar">
     <div class="sidebar__inner">
-      <nav class="sidebar__category" >
-        
-        
+      <nav class="sidebar__category">
         <ul class="sidebar__docs">
-          
-            
-            
-            <ul class="sidebar__subdocs">
-              <div v-html="subnav"></div>
-              <!-- <li v-bind:key="navitem.id" v-for="navitem in subnav">
-                
-                <nuxt-link class="nav-link" :to="navitem.id">{{navitem.text}}</nuxt-link>
-                <ul v-if="navitem.children.length > 0">
-                  <li v-bind:key="child.id" v-for="child in navitem.children">
-                    <nuxt-link class="nav-link" :to="child.id">{{child.text}}</nuxt-link>
-                  </li>
-                </ul>
-
-              </li> -->
-            </ul>
-
-          
+          <ul class="sidebar__subdocs">
+            <div v-html="subnav"></div>
+          </ul>
         </ul>
       </nav>
     </div>
@@ -35,32 +18,33 @@ import cheerio from 'cheerio'
 export default {
   computed: {
     slug() {
-return this.$store.state.content.slug
+      return this.$store.state.content.slug
     },
     subnav() {
       const $ = cheerio.load(this.$store.state.content.currentContent)
       let pageNav = []
-      let navItem ='<ul class="sidebar-links" >\n'
+      let navItem = '<ul class="sidebar-links" >\n'
       let slug = this.slug
       $('h2, h3').each((i, elem) => {
         let $elem = $(elem)
         if ($elem[0].name == 'h2') {
           pageNav.push({
-            id: '#'+ $elem.attr('id'),
+            id: '#' + $elem.attr('id'),
             text: $elem.text(),
             children: []
           })
-          navItem = navItem + `<li><a class='sidebar-link' href=${'#'+$elem.attr('id')}>${$elem.text().replace('# ','')}</a></li>\n`
-          
+          navItem =
+            navItem +
+            `<li><a class='sidebar-link' href=${'#' +
+              $elem.attr('id')}>${$elem.text().replace('# ', '')}</a></li>\n`
         } else {
           pageNav[pageNav.length - 1].children.push({
             id: `#${$elem.attr('id')}`,
-            text: $elem.text(),
+            text: $elem.text()
           })
         }
       })
       return navItem + '</ul>'
-      // return pageNav
     }
   }
 }
@@ -79,7 +63,7 @@ return this.$store.state.content.slug
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;
-  
+
   display: none;
   @media screen and (min-width: 835px) {
     display: block;
@@ -130,7 +114,7 @@ return this.$store.state.content.slug
   list-style-type: none;
   margin: 0;
   padding-left: 10px;
-  font-size: 0.80em;
+  font-size: 0.8em;
   .sidebar__link {
     color: $sidebar-subnav-link-color-inactive;
   }
@@ -138,6 +122,5 @@ return this.$store.state.content.slug
     padding-left: 10px;
   }
 }
-
 </style>
 
