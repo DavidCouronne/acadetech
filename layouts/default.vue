@@ -8,7 +8,7 @@
       app
     > -->
     <v-navigation-drawer
-    clipped= true
+    :clipped="clipped"
     v-model="drawer"
     fixed
       app
@@ -89,7 +89,7 @@
   export default {
     data() {
       return {
-        clipped: false,
+        clipped: true,
         drawer: true,
         fixed: false,
         items: [
