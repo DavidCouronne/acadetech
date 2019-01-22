@@ -6,7 +6,7 @@
     </Sidebar> -->
     
     	<h1 class="single-post__title">
-            {{currentCours.fields.titre}}
+            {{currentCours.fields.title}}
         </h1>
         <div v-html="content"></div>
         <!-- <ul class="sidebar__subdocs" >
@@ -54,6 +54,10 @@ export default {
         content() {
             this.$store.commit('content/updateSlug',this.$store.state.cour.currentCours.fields.slug)
             this.$store.commit('content/updateContent',this.$md.render(this.$store.state.cour.currentCours.fields.body))
+            this.$store.commit('page/updateSlug',this.$store.state.cour.currentCours.fields.slug)
+            this.$store.commit('page/updateBody',this.$md.render(this.$store.state.cour.currentCours.fields.body))
+            this.$store.commit('page/updateTitle',this.$store.state.cour.currentCours.fields.title)
+        
 return this.$md.render(this.$store.state.cour.currentCours.fields.body)
         },
         /* content() {

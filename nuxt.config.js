@@ -36,11 +36,11 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    
-    '@/assets/styles/theme.styl', //Vuepress
+
+    '@/assets/styles/theme.styl', // Vuepress
     'prismjs/themes/prism-dark.css',
-    '@assets/stylus/main.styl', //Vuetify sauf _code
-    // '@assets/main.css'
+    '@assets/stylus/main.styl', // Vuetify sauf _code
+    //'@assets/material/styles/index.scss'
   ],
 
   /*

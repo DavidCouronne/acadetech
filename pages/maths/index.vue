@@ -12,7 +12,7 @@
 
           <ul v-if="cours">
             <li v-for="(cour, index) in cours" :key="index">
-              <nuxt-link :to="cour.fields.slug">{{cour.fields.type}} : {{cour.fields.titre}}</nuxt-link>
+              <nuxt-link :to="cour.fields.slug">{{cour.fields.type}} : {{cour.fields.title}}</nuxt-link>
             </li>
           </ul>
           
