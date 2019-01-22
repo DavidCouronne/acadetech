@@ -38,7 +38,7 @@
       app
     > -->
     <v-toolbar
-      clipped-left= true
+      :clipped-left="clipped"
       fixed
       app
     >
@@ -89,7 +89,7 @@
   export default {
     data() {
       return {
-        clipped: false,
+        clipped: true,
         drawer: true,
         fixed: false,
         items: [

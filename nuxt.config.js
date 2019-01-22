@@ -1,8 +1,7 @@
-const { generateConfig } = require("./generateConfig");
+const { generateConfig } = require('./generateConfig')
 
 const pkg = require('./package')
 require('dotenv').config()
-
 
 module.exports = {
   mode: 'universal',
@@ -15,16 +14,16 @@ module.exports = {
     ],
     link: [
       {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons'
       },
-      
-       {rel: "stylesheet",
-      href: "https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css",
-      integrity: "sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y",
-      crossorigin: "anonymous"}, //katex css
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      
+
+      { rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css',
+        integrity: 'sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y',
+        crossorigin: 'anonymous' }, // katex css
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+
     ]
   },
 
@@ -36,12 +35,12 @@ module.exports = {
   /*
   ** Global CSS
   */
- css: [
-   //'@assets/style/app.styl', //Vuetify
-  '@/assets/styles/theme.styl',
-  'prismjs/themes/prism-dark.css',
-  '@assets/main.css'
-],
+  css: [
+    '@assets/stylus/app.styl', //Vuetify sauf _code
+    '@/assets/styles/theme.styl', //Vuepress
+    'prismjs/themes/prism-dark.css'
+    // '@assets/main.css'
+  ],
 
   /*
   ** Plugins to load before mounting the App
@@ -49,7 +48,7 @@ module.exports = {
   plugins: [
     '@/plugins/vuetify',
     '@/plugins/contentful',
-    '~/plugins/global-components-loader.js',
+    '~/plugins/global-components-loader.js'
   ],
 
   /*
@@ -74,17 +73,16 @@ module.exports = {
       '@mathssyfy/markdown-it-container',
       'markdown-it-katex-newcommand',
       '@mathssyfy/markdown-it-linenumbers'
-      
+
     ]
   },
-  
+
   /*
   ** Axios module configuration
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-  
 
   /*
   ** Build configuration
@@ -93,13 +91,11 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
+    extend (config, ctx) {
       config.node = {
         fs: 'empty'
-      }    
-      
+      }
     }
   },
   generate: generateConfig()
 }
-
