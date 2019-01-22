@@ -1,139 +1,107 @@
 <template>
-  <div
-    class="theme-container"
-    :class="pageClasses"
-    @touchstart="onTouchStart"
-    @touchend="onTouchEnd"
-  >
-    <Navbar
-      v-if="shouldShowNavbar"
-      @toggle-sidebar="toggleSidebar"
-    />
-
-    <div
-      class="sidebar-mask"
-      @click="toggleSidebar(false)"
-    ></div>
-
-    <Sidebar
-      :items="sidebarItems"
-      @toggle-sidebar="toggleSidebar"
+  <v-app>
+    <!-- <v-navigation-drawer
+      :mini-variant="miniVariant"
+      :clipped="clipped"
+      v-model="drawer"
+      fixed
+      app
+    > -->
+    <v-navigation-drawer
+    clipped= true
+    v-model="drawer"
+    fixed
+      app
     >
-      <slot
-        name="sidebar-top"
-        slot="top"
-      />
-      <slot
-        name="sidebar-bottom"
-        slot="bottom"
-      />
-    </Sidebar>
-
-    
-
-    <Page
+      <v-list>
+        <v-list-tile
+          v-for="(item, i) in items"
+          :to="item.to"
+          :key="i"
+          router
+          exact
+        >
+          <v-list-tile-action>
+            <v-icon v-html="item.icon" />
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title v-text="item.title" />
+          </v-list-tile-content>
+        </v-list-tile>
+       
+      </v-list>
       
-      :sidebar-items="sidebarItems"
+    </v-navigation-drawer>
+    <!-- <v-toolbar
+      :clipped-left="clipped"
+      fixed
+      app
+    > -->
+    <v-toolbar
+      clipped-left= true
+      fixed
+      app
     >
-      <slot
-        name="page-top"
-        slot="top"
-      />
-      <slot
-        name="page-bottom"
-        slot="bottom"
-      />
-    </Page>
-  </div>
+      <v-toolbar-side-icon @click="drawer = !drawer" />
+      
+      
+      <nuxt-link to="/"><v-toolbar-title v-text="title"/></nuxt-link>
+      <v-spacer></v-spacer>
+      
+       
+      <v-btn
+        icon
+        @click.stop="rightDrawer = !rightDrawer"
+      >
+        <v-icon>menu</v-icon>
+      </v-btn>
+    </v-toolbar>
+    <v-content>
+      <v-container>
+        <nuxt />
+      </v-container>
+    </v-content>
+    <v-navigation-drawer
+      :right="right"
+      v-model="rightDrawer"
+      temporary
+      fixed
+    >
+      <v-list>
+        <v-list-tile @click.native="right = !right">
+          <v-list-tile-action>
+            <v-icon light>compare_arrows</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
+    <v-footer
+      :fixed="fixed"
+      app
+    >
+      <span>&copy; 2017</span>
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
-
-import Navbar from '../components/Navbar.vue'
-import Page from '../components/Page.vue'
-import Sidebar from '../components/Sidebar.vue'
-import { resolveSidebarItems } from '../util'
-import {themeConfig} from '../plugins/userConfig'
-
-export default {
-  components: {  Page, Sidebar, Navbar },
-
-  data () {
-    return {
-      isSidebarOpen: false
-    }
-  },
-
-  computed: {
-    shouldShowNavbar () {
-      
-      
-      return (
-        themeConfig.siteTitle ||
-        themeConfig.logo ||
-        themeConfig.repo ||
-        themeConfig.nav ||
-        themeConfig.nav
-      )
-    },
-
-    shouldShowSidebar () {
-      
-      return (
-        true
-      )
-    },
-
-    sidebarItems () {
-      return resolveSidebarItems(
-        this.$store.state.content.currentContent
-      )
-    },
-
-    pageClasses () {
-      
-      return [
-        {
-          'no-navbar': false,
-          'sidebar-open': this.isSidebarOpen,
-          'no-sidebar': false
-        }
-      ]
-    }
-  },
-
-  mounted () {
-    this.$router.afterEach(() => {
-      this.isSidebarOpen = false
-    })
-  },
-
-  methods: {
-    toggleSidebar (to) {
-      this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen
-    },
-
-    // side swipe
-    onTouchStart (e) {
-      this.touchStart = {
-        x: e.changedTouches[0].clientX,
-        y: e.changedTouches[0].clientY
-      }
-    },
-
-    onTouchEnd (e) {
-      const dx = e.changedTouches[0].clientX - this.touchStart.x
-      const dy = e.changedTouches[0].clientY - this.touchStart.y
-      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
-        if (dx > 0 && this.touchStart.x <= 80) {
-          this.toggleSidebar(true)
-        } else {
-          this.toggleSidebar(false)
-        }
+  export default {
+    data() {
+      return {
+        clipped: false,
+        drawer: true,
+        fixed: false,
+        items: [
+          { icon: 'home', title: 'Accueil', to: '/' },
+          { icon: 'computer', title: 'Ressources Dev', to: '/dev' },
+          { icon: 'functions', title: 'Maths', to: '/maths' }
+        ],
+        miniVariant: false,
+        right: true,
+        rightDrawer: false,
+        title: 'AcadeTech'
       }
     }
   }
-}
 </script>
-
-

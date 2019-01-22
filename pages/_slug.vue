@@ -1,9 +1,9 @@
 <template>
     <div class="single-post">
-        <Sidebar>
+        <!-- <Sidebar>
       <slot name="sidebar-top" slot="top"/>
       <slot name="sidebar-bottom" slot="bottom"/>
-    </Sidebar>
+    </Sidebar> -->
     
     	<h1 class="single-post__title">
             {{currentPost.fields.title}}

@@ -1,9 +1,9 @@
 <template>
     <div class="page">
-        <Sidebar>
+        <!-- <Sidebar>
       <slot name="top"/>
       <slot name="sidebar-bottom" slot="bottom"/>
-    </Sidebar>
+    </Sidebar> -->
     
     	<h1 class="single-post__title">
             {{currentCours.fields.titre}}
