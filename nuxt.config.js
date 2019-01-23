@@ -37,11 +37,11 @@ module.exports = {
   */
   css: [
 
-    // '@/assets/styles/theme.styl', // Vuepress
+  //  '@/assets/styles/theme.styl', // Vuepress
 
     'prismjs/themes/prism-dark.css',
-    // '@assets/stylus/main.styl', // Vuetify sauf _code
-    '@/assets/stylus/mini/theme.css', // Vuetify Mini Prepos
+     '@assets/stylus/main.styl', // Vuetify sauf _code
+   // '@/assets/stylus/mini/theme.css', // Vuetify Mini Prepos
     '@/assets/styles/code.styl'
     // '@assets/material/styles/index.scss'
   ],
