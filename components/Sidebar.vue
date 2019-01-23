@@ -1,15 +1,9 @@
 <template>
-  <div class="sidebar">
-    <div class="sidebar__inner">
-      <nav class="sidebar__category">
-        <ul class="sidebar__docs">
-          <ul class="sidebar__subdocs">
+<div>
+  
             <div v-html="subnav"></div>
-          </ul>
-        </ul>
-      </nav>
-    </div>
-  </div>
+            </div>
+          
 </template>
 
 <script>
@@ -18,10 +12,10 @@ import cheerio from 'cheerio'
 export default {
   computed: {
     slug() {
-      return this.$store.state.content.slug
+      return this.$store.state.page.slug
     },
     subnav() {
-      const $ = cheerio.load(this.$store.state.content.currentContent)
+      const $ = cheerio.load(this.$store.state.page.body)
       let pageNav = []
       let navItem = '<ul class="sidebar-links" >\n'
       let slug = this.slug

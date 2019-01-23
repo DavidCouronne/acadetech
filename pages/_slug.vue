@@ -49,12 +49,15 @@ export default {
             return this.$store.state.post.isLoading
         },
         content() {
+          
       //const $ = cheerio.load('<h2 class="title">Hello world</h2>')
-      const content = this.$md.render(this.$store.state.post.currentPost.fields.body)
-      const $ = cheerio.load(content)
+      const currentContent = this.$md.render(this.$store.state.post.currentPost.fields.body)
+      this.$store.commit('page/updateSlug',this.$store.state.post.currentPost.fields.slug)
+            this.$store.commit('page/updateBody',currentContent)
+            this.$store.commit('page/updateTitle',this.$store.state.post.currentPost.fields.title)   
       
-      
-      return $.html()
+      // return $.html()
+      return currentContent
       
     }
     

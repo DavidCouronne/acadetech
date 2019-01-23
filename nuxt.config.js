@@ -37,9 +37,12 @@ module.exports = {
   */
   css: [
 
-    '@/assets/styles/theme.styl', // Vuepress
+    // '@/assets/styles/theme.styl', // Vuepress
+
     'prismjs/themes/prism-dark.css',
-    '@assets/stylus/main.styl' // Vuetify sauf _code
+    // '@assets/stylus/main.styl', // Vuetify sauf _code
+    '@/assets/stylus/mini/theme.css', // Vuetify Mini Prepos
+    '@/assets/styles/code.styl'
     // '@assets/material/styles/index.scss'
   ],
 
@@ -47,6 +50,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~plugins/vue-instantsearch',
     '@/plugins/vuetify',
     '@/plugins/contentful',
     '~/plugins/global-components-loader.js',

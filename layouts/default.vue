@@ -1,25 +1,54 @@
 <template>
   <v-app>
-    <core-drawer :clipped="clipped" :drawer="drawer"/>
+    <!-- <core-drawer :clipped="clipped" :drawer="drawer"/> -->
+ <v-navigation-drawer
+     :clipped="clipped"
+      v-model="drawer" 
+      fixed app>
+      <v-list>
+        <core-scroll-spy v-if="scrollspy"/>
+        <v-list-tile
+          v-for="(item, i) in items"
+          :to="item.to"
+          :key="i"
+          :active-class="color"
+          router
+          exact
+        >
+          <v-list-tile-action>
+            <v-icon v-html="item.icon"/>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title v-text="item.title"/>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-divider></v-divider>
+        <Title/>
+        <Sidebar/>
+      </v-list>
+    </v-navigation-drawer>
 
-    <v-toolbar :clipped-left="clipped" fixed app dark color="primary" tabs>
+
+    <v-toolbar :clipped-left="clipped" fixed app dark color="primary" :z-index='20'>
       <v-toolbar-side-icon @click="drawer = !drawer"/>
 
-      <v-tabs v-model="tabs" color="transparent">
-        <v-tabs-slider></v-tabs-slider>
-        <v-tab to="/">
+      
+        <v-btn icon
+        to="/">
           <v-icon>home</v-icon>
-        </v-tab>
+        </v-btn>
 
-        <v-tab to="/maths/">
+        <v-btn icon
+        to="/maths/">
           <v-icon>school</v-icon>
-        </v-tab>
+        </v-btn>
 
-        <v-tab to="/dev/">
+        <v-btn icon
+        to="/dev/">
           <v-icon>computer</v-icon>
-        </v-tab>
-        <v-tab v-text="title"/>
-      </v-tabs>
+        </v-btn>
+        <v-toolbar-title v-text="title"/>
+      
 
       <v-spacer></v-spacer>
 
@@ -55,20 +84,24 @@ export default {
     return {
       tabs: null,
       activenav: 'secundary',
-      color: 'blue lighten-3',
+      color: 'secondary',
       clipped: true,
       drawer: true,
       fixed: false,
-      items: [
-        { icon: 'home', title: 'Accueil', to: '/' },
-        { icon: 'computer', title: 'Ressources Dev', to: '/dev' },
-        { icon: 'functions', title: 'Maths', to: '/maths' }
-      ],
+      
       miniVariant: false,
       right: true,
       rightDrawer: false,
       title: themeConfig.siteTitle
     }
+  },
+  computed: {
+    items() {
+    return themeConfig.nav
+},
+    scrollspy() {
+  return this.$store.state.page.scrollspy
+}
   }
 }
 </script>
