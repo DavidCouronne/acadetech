@@ -23,8 +23,8 @@
           </v-list-tile-content>
         </v-list-tile>
         <v-divider></v-divider>
-        <Title/>
-        <Sidebar/>
+        <!-- <Title/> -->
+        <!-- <Sidebar/> -->
       </v-list>
     </v-navigation-drawer>
 
