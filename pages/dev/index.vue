@@ -24,6 +24,7 @@ import cheerio from 'cheerio'
 export default {
     computed: {
     subnav() {
+      this.$store.commit('page/updateScrollspy',false)
       //const $ = cheerio.load('<h2 class="title">Hello world</h2>')
       const content = this.$md.render('# Tests Cheerio\n\n'
       +'## Section 1\n\n'

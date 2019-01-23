@@ -1,53 +1,26 @@
 <template>
   <v-app>
-    <!-- <v-navigation-drawer
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      v-model="drawer"
-      fixed
-      app
-    >-->
-    <v-navigation-drawer :clipped="clipped" v-model="drawer" fixed app>
-      <v-list>
-        <v-list-tile
-          v-for="(item, i) in items"
-          :to="item.to"
-          :key="i"
-          :active-class="color"
-          router
-          exact
-        >
-          <v-list-tile-action>
-            <v-icon v-html="item.icon"/>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title v-text="item.title"/>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-list-group
-        prepend-icon="account_circle"
-        value="true"
-      ><v-list-tile slot="activator">
-          <v-list-tile-title>{{pagetitle}}</v-list-tile-title>
-        </v-list-tile>
-        </v-list-group>
-      </v-list>
-    </v-navigation-drawer>
-    <!-- <v-toolbar
-      :clipped-left="clipped"
-      fixed
-      app
-    >-->
-    <v-toolbar :clipped-left="clipped" fixed app dark color="#FB8C00">
+    <core-drawer :clipped="clipped" :drawer="drawer"/>
+
+    <v-toolbar :clipped-left="clipped" fixed app dark color="primary" tabs>
       <v-toolbar-side-icon @click="drawer = !drawer"/>
-      <v-btn icon>
-        <v-icon>home</v-icon>
-      </v-btn>
-      <!-- <v-btn flat
-      to="/"
-      v-text="title"
-      />-->
-      <v-toolbar-title v-text="title"/>
+
+      <v-tabs v-model="tabs" color="transparent">
+        <v-tabs-slider></v-tabs-slider>
+        <v-tab to="/">
+          <v-icon>home</v-icon>
+        </v-tab>
+
+        <v-tab to="/maths/">
+          <v-icon>school</v-icon>
+        </v-tab>
+
+        <v-tab to="/dev/">
+          <v-icon>computer</v-icon>
+        </v-tab>
+        <v-tab v-text="title"/>
+      </v-tabs>
+
       <v-spacer></v-spacer>
 
       <v-btn icon @click.stop="rightDrawer = !rightDrawer">
@@ -76,9 +49,12 @@
 </template>
 
 <script>
+import { themeConfig } from '@/plugins/userConfig.js'
 export default {
   data() {
     return {
+      tabs: null,
+      activenav: 'secundary',
       color: 'blue lighten-3',
       clipped: true,
       drawer: true,
@@ -91,12 +67,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'AcadeTech'
-    }
-  },
-  computed: {
-    pagetitle() {
-      return this.$store.state.page.title
+      title: themeConfig.siteTitle
     }
   }
 }

@@ -1,12 +1,10 @@
 <template>
   <div>
     
+    <v-flex>
     
-    <v-flex xs12 sm8 md6>
-      <div class="text-xs-center"></div>
-      <v-card>
-        <v-card-title class="headline">Bienvenue sur AcadeTech</v-card-title>
-        <v-card-text>
+        <div class="headline">Bienvenue sur AcadeTech</div>
+        
           <h2>Derniers articles</h2>
           
 
@@ -27,12 +25,7 @@
           <a href="https://nuxtjs.org/" target="_blank">Nuxt Documentation</a>
           <br>
           <a href="https://github.com/nuxt/nuxt.js" target="_blank">Nuxt GitHub</a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer/>
-          <v-btn color="primary" flat nuxt to="/inspire">Continue</v-btn>
-        </v-card-actions>
-      </v-card>
+        
     </v-flex>
  </div>
 </template>
@@ -45,9 +38,11 @@ export default {
 
   computed: {
     posts() {
+      this.$store.commit('page/updateScrollspy',false)
       return this.$store.state.posts.posts
     },
     navlinks() {
+      
       return this.$store.state.navlinks.navlinks
     },
     

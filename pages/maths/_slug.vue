@@ -1,9 +1,5 @@
 <template>
     <div class="page">
-        <!-- <Sidebar>
-      <slot name="top"/>
-      <slot name="sidebar-bottom" slot="bottom"/>
-    </Sidebar> -->
     
     	<h1 class="single-post__title">
             {{currentCours.fields.title}}
@@ -50,6 +46,9 @@ export default {
         },
         isLoading() {
             return this.$store.state.cour.isLoading
+        },
+        maintitle() {
+return this.$store.state.cour.currentCours.fields.title
         },
         content() {
             this.$store.commit('content/updateSlug',this.$store.state.cour.currentCours.fields.slug)

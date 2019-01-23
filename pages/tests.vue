@@ -1,19 +1,17 @@
 <template>
   <div>
-      <h1>{{item.link}}</h1>
-      <NavLink :item="item"/>
+    <h1>{{item.link}}</h1>
 
-      <h2>NavLinks ok</h2>
-      <NavLinks/>
-      <h2>Dropdown Transition ok</h2>
+    <h2>NavLinks ok</h2>
 
-      <h2>NavBar à faire</h2>
+    <h2>Dropdown Transition ok</h2>
 
-      <Navbar/>
+    <div v-html="body"></div>
   </div>
 </template>
 
 <script>
+
 export default {
   computed: {
     item() {
@@ -21,6 +19,16 @@ export default {
       i.link = '/tests/'
       i.text = 'Tests'
       return i
+    },
+    body() {
+      return this.$md.render(
+        '# Titre 1\n'
+        +'Blabla\n'
+        +'## Sous titre 1\n'
+        +'Blabla\n'
+        +'## Sous titre 2\n'
+        +'Blabla\n'
+      )
     }
   }
 }

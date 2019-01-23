@@ -6,30 +6,25 @@ module.exports = {
       '/docs/',
     ],
     nav: [{
-        text: 'Accueil',
-        link: '/'
+        icon: 'home',
+        title: 'Accueil',
+        to: '/'
       },
       {
-        text: 'Ressources Dev',
-        link: '/dev/'
+        icon: 'computer',
+        title: 'Ressources Dev',
+        to: '/dev'
       },
       {
-        text: 'Maths',
-        link: '/cours/'
+        icon: 'functions',
+        title: 'Maths',
+        to: '/maths'
       },
-      //{
-      //  text: 'Tests',
-      //  link: '/tests/'
-      //},
-      /* {
-        text: 'testDrop',
-        items: [
-          {text:'item 1',
-        link:'/'},
-        {text:'item 2',
-      link: '/'}
-        ]
-      } */
+      {
+        icon: 'computer',
+        title: 'ScrollSpy',
+        to: '/scrollspy'
+      }
     ]
   }
 }

@@ -12,7 +12,7 @@
 
           <ul v-if="cours">
             <li v-for="(cour, index) in cours" :key="index">
-              <nuxt-link :to="cour.fields.slug">{{cour.fields.type}} : {{cour.fields.title}}</nuxt-link>
+              <nuxt-link :to="'/maths/'+cour.fields.slug">{{cour.fields.type}} : {{cour.fields.title}}</nuxt-link>
             </li>
           </ul>
           
@@ -42,6 +42,7 @@ export default {
 
   computed: {
     cours() {
+      this.$store.commit('page/updateScrollspy',false)
       return this.$store.state.cours.cours
     },
     

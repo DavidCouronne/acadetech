@@ -1,11 +1,17 @@
-
-
 import Vue from 'vue'
-import _ from 'lodash'
+import upperFirst from 'lodash/upperFirst'
+import camelCase from 'lodash/camelCase'
 
-const components = require.context('@/components', false, /[A-Z]\w+\.(vue)$/) 
-_.forEach(components.keys(), fileName => {
-    const componentConfig = components(fileName)
-    const componentName = fileName.split('/').pop().split('.')[0]
-    Vue.component(componentName, componentConfig.default || componentConfig)
+const requireComponent = require.context(
+  '@/components', true, /\.vue$/
+)
+
+requireComponent.keys().forEach(fileName => {
+  const componentConfig = requireComponent(fileName)
+
+  const componentName = upperFirst(
+    camelCase(fileName.replace(/^\.\//, '').replace(/\.\w+$/, ''))
+  )
+
+  Vue.component(componentName, componentConfig.default || componentConfig)
 })

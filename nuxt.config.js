@@ -39,8 +39,8 @@ module.exports = {
 
     '@/assets/styles/theme.styl', // Vuepress
     'prismjs/themes/prism-dark.css',
-    '@assets/stylus/main.styl', // Vuetify sauf _code
-    //'@assets/material/styles/index.scss'
+    '@assets/stylus/main.styl' // Vuetify sauf _code
+    // '@assets/material/styles/index.scss'
   ],
 
   /*
@@ -49,7 +49,12 @@ module.exports = {
   plugins: [
     '@/plugins/vuetify',
     '@/plugins/contentful',
-    '~/plugins/global-components-loader.js'
+    '~/plugins/global-components-loader.js',
+    {
+      src: '@/plugins/scrollspy',
+      ssr: false
+
+    }
   ],
 
   /*
