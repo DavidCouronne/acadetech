@@ -17,10 +17,10 @@ module.exports = {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons'
       },
-      {
+       {
         rel: 'stylesheet',
         href: 'https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css'
-      },
+      }, 
 
       { rel: 'stylesheet',
         href: 'https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css',
@@ -41,12 +41,12 @@ module.exports = {
   */
   css: [
 
-  //  '@/assets/styles/theme.styl', // Vuepress
+    //  '@/assets/styles/theme.styl', // Vuepress
 
     'prismjs/themes/prism-dark.css',
-     //'@assets/stylus/main.styl', // Vuetify sauf _code
-   // '@/assets/stylus/mini/theme.css', // Vuetify Mini Prepos
-    '@/assets/styles/code.styl'
+    //'@assets/stylus/main.styl', // Vuetify sauf _code
+    // '@/assets/stylus/mini/theme.css', // Vuetify Mini Prepos
+    //'@/assets/styles/code.styl'
     // '@assets/material/styles/index.scss'
   ],
 
@@ -57,7 +57,7 @@ module.exports = {
     '~plugins/vue-instantsearch',
     '@/plugins/vuetify',
     '@/plugins/contentful',
-    '~/plugins/global-components-loader.js',
+    //'~/plugins/global-components-loader.js',
     {
       src: '@/plugins/scrollspy',
       ssr: false
@@ -77,16 +77,16 @@ module.exports = {
   markdownit: {
     injected: true,
     use: [
-      '@mathssyfy/markdown-it-component',
+      //'@mathssyfy/markdown-it-component',
       'markdown-it-prism',
-      '@mathssyfy/markdown-it-highlightlines',
-      '@mathssyfy/markdown-it-prewrapper',
+      //'@mathssyfy/markdown-it-highlightlines',
+      //'@mathssyfy/markdown-it-prewrapper',
       '@mathssyfy/markdown-it-anchor',
       'markdown-it-table-of-contents',
       'markdown-it-emoji',
       '@mathssyfy/markdown-it-container',
       'markdown-it-katex-newcommand',
-      '@mathssyfy/markdown-it-linenumbers'
+      //'@mathssyfy/markdown-it-linenumbers'
 
     ]
   },

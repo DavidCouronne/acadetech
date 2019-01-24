@@ -27,12 +27,7 @@
 
     <v-toolbar :clipped-left="clipped" fixed app dark color="primary" :z-index="20">
       <v-toolbar-side-icon @click="drawer = !drawer"/>
-      <v-btn
-        color="pink"
-        dark
-        @click.stop="drawer = !drawer"
-        @toggle-sidebar="$emit('toggle-sidebar')"
-      >Toggle</v-btn>
+      
 
       <v-btn icon to="/">
         <v-icon>home</v-icon>
