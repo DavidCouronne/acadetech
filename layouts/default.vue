@@ -2,8 +2,11 @@
   <v-app>
     <!-- <core-drawer :clipped="clipped" :drawer="drawer"/> -->
  <v-navigation-drawer
+ v-if="drawer"
      :clipped="true"
-      v-model="drawer" 
+      
+      
+      
       fixed app>
       <v-list>
         <core-scroll-spy v-if="scrollspy"/>
@@ -35,6 +38,8 @@
           color="pink"
           dark
           @click.stop="drawer = !drawer"
+          
+           @toggle-sidebar="$emit('toggle-sidebar')"
         >
           Toggle
         </v-btn>
@@ -95,7 +100,7 @@ export default {
       clipped: true,
       drawer: true,
       fixed: false,
-      
+      isSidebarOpen: false,
       miniVariant: false,
       right: true,
       rightDrawer: false,
@@ -109,6 +114,11 @@ export default {
     scrollspy() {
   return this.$store.state.page.scrollspy
 }
+  },
+  methods: {
+    toggleSidebar (to) {
+      this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen
+    },
   }
 }
 </script>
