@@ -33,7 +33,7 @@
 <script>
 import Markdown from '@mathssyfy/plugin-markdown'
 import cheerio from 'cheerio'
-import { resolvePage, normalize, outboundRE, endingSlashRE } from '../../util'
+//import { resolvePage, normalize, outboundRE, endingSlashRE } from '../../util'
 
 export default {
     props: ['sidebarItems'],
