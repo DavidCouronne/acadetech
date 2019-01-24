@@ -34,13 +34,10 @@
 </template>
 
 <script>
-import Markdown from '@mathssyfy/plugin-markdown'
-import cheerio from 'cheerio'
+
 
 export default {
-    components: {
-    Markdown
-  },
+    
     computed: {
         currentPost() {
             return this.$store.state.post.currentPost
