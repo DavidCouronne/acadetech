@@ -42,7 +42,7 @@ export default {
 
   computed: {
     posts() {
-      this.$store.commit('page/updateScrollspy',false)
+      
       return this.$store.state.posts.posts
     },
     maths: function () {

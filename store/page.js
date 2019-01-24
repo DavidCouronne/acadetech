@@ -2,7 +2,7 @@ export const state = () => ({
   body: "",
   slug: "",
   isLoading: true,
-  scrollspy: false,
+  
   title: ""
 })
 
@@ -16,7 +16,5 @@ export const mutations = {
   updateTitle(state, title) {
     state.title = title
   },
-  updateScrollspy(state, scroll) {
-    state.scrollspy = scroll
-  }
+  
 }

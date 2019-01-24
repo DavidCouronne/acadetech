@@ -54,7 +54,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~plugins/vue-instantsearch',
+    
     '@/plugins/vuetify',
     '@/plugins/contentful',
     // '~/plugins/global-components-loader.js',

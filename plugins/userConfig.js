@@ -20,11 +20,7 @@ module.exports = {
         title: 'Maths',
         to: '/maths'
       },
-      {
-        icon: 'computer',
-        title: 'ScrollSpy',
-        to: '/scrollspy'
-      }
+      
     ]
   }
 }
