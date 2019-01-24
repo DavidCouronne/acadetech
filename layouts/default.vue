@@ -1,9 +1,7 @@
 <template>
   <v-app>
-    
     <v-navigation-drawer v-if="drawer" :clipped="clipped" fixed app>
       <v-list>
-        
         <v-list-tile
           v-for="(item, i) in items"
           :to="item.to"
@@ -27,19 +25,24 @@
 
     <v-toolbar :clipped-left="clipped" fixed app dark color="primary">
       <v-toolbar-side-icon @click="drawer = !drawer"/>
-      
+      <v-btn
+          color="pink"
+          dark
+          icon
+          @click.stop="drawer = !drawer"
+        ><v-icon>more_vert</v-icon>
+        </v-btn>
+
       <v-toolbar-title v-text="title"/>
 
       <v-spacer></v-spacer>
-
-      
     </v-toolbar>
     <v-content>
       <v-container>
         <nuxt/>
       </v-container>
     </v-content>
-    
+
     <v-footer :fixed="fixed" app>
       <span>&copy; 2019 MIT David Couronné</span>
     </v-footer>
@@ -47,7 +50,6 @@
 </template>
 
 <script>
-
 export default {
   data() {
     return {
@@ -62,18 +64,16 @@ export default {
       rightDrawer: false,
       title: 'AcadeTech',
       items: [
-          { icon: 'home', title: 'Accueil', to: '/' },
-          { icon: 'school', title: 'Mathématiques', to: '/maths' },
-          { icon: 'computer', title: 'Développement', to: '/dev' }
-        ],
+        { icon: 'home', title: 'Accueil', to: '/' },
+        { icon: 'school', title: 'Mathématiques', to: '/maths' },
+        { icon: 'computer', title: 'Développement', to: '/dev' }
+      ]
     }
   },
   computed: {
-    
     scrollspy() {
       return this.$store.state.page.scrollspy
     }
-  },
-  
+  }
 }
 </script>
