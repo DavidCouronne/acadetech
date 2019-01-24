@@ -25,7 +25,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-toolbar :clipped-left="clipped" fixed app dark color="primary" :z-index="20">
+    <v-toolbar :clipped-left="clipped" fixed app dark color="primary">
       <v-toolbar-side-icon @click="drawer = !drawer"/>
       
 
@@ -44,16 +44,16 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
+      <!-- <v-btn icon @click.stop="rightDrawer = !rightDrawer">
         <v-icon>menu</v-icon>
-      </v-btn>
+      </v-btn> -->
     </v-toolbar>
     <v-content>
       <v-container>
         <nuxt/>
       </v-container>
     </v-content>
-    <v-navigation-drawer :right="right" v-model="rightDrawer" temporary fixed>
+    <!-- <v-navigation-drawer :right="right" v-model="rightDrawer" temporary fixed>
       <v-list>
         <v-list-tile @click.native="right = !right">
           <v-list-tile-action>
@@ -62,7 +62,7 @@
           <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
         </v-list-tile>
       </v-list>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
     <v-footer :fixed="fixed" app>
       <span>&copy; 2019 MIT David Couronné</span>
     </v-footer>
@@ -70,11 +70,10 @@
 </template>
 
 <script>
-import { themeConfig } from '@/plugins/userConfig.js'
+
 export default {
   data() {
     return {
-      tabs: null,
       activenav: 'secundary',
       color: 'secondary',
       clipped: true,
@@ -84,21 +83,20 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: themeConfig.siteTitle
+      title: 'AcadeTech',
+      items: [
+          { icon: 'home', title: 'Accueil', to: '/' },
+          { icon: 'school', title: 'Mathématiques', to: '/maths' },
+          { icon: 'computer', title: 'Développement', to: '/dev' }
+        ],
     }
   },
   computed: {
-    items() {
-      return themeConfig.nav
-    },
+    
     scrollspy() {
       return this.$store.state.page.scrollspy
     }
   },
-  methods: {
-    toggleSidebar(to) {
-      this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen
-    }
-  }
+  
 }
 </script>
