@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer v-if="drawer" :clipped="clipped" fixed app>
+    <v-navigation-drawer v-model="drawer" :clipped="clipped" fixed app>
       <v-list>
         <v-list-tile
           v-for="(item, i) in items"
@@ -18,19 +18,19 @@
           </v-list-tile-content>
         </v-list-tile>
         <v-divider></v-divider>
-        <!-- <Title/> -->
-        <!-- <Sidebar/> -->
+        <Title/>
+        <Sidebar/> 
       </v-list>
     </v-navigation-drawer>
 
     <v-toolbar :clipped-left="clipped" fixed app dark color="primary">
       
       <v-btn
-          color="secundary"
+          :color="color"
           dark
           icon
           @click.stop="drawer = !drawer"
-        ><v-icon>more_vert</v-icon>
+        ><v-icon>reorder</v-icon>
         </v-btn>
         <v-btn
           dark
