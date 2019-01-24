@@ -1,53 +1,102 @@
 <template>
-  <div class="theme-container">
-    <Navbar/>
-    <no-ssr>
-    <ButtonBackToTop/>
-    </no-ssr>
+  <v-app>
+    <!-- <core-drawer :clipped="clipped" :drawer="drawer"/> -->
+    <v-navigation-drawer v-if="drawer" :clipped="true" fixed app>
+      <v-list>
+        <core-scroll-spy v-if="scrollspy"/>
+        <v-list-tile
+          v-for="(item, i) in items"
+          :to="item.to"
+          :key="i"
+          :active-class="color"
+          router
+          exact
+        >
+          <v-list-tile-action>
+            <v-icon v-html="item.icon"/>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title v-text="item.title"/>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-divider></v-divider>
+        <!-- <Title/> -->
+        <!-- <Sidebar/> -->
+      </v-list>
+    </v-navigation-drawer>
 
-    
+    <v-toolbar :clipped-left="clipped" fixed app dark color="primary">
+      <v-toolbar-side-icon @click="drawer = !drawer"/>
+      
 
-    
+      <v-btn icon to="/">
+        <v-icon>home</v-icon>
+      </v-btn>
 
-    <Page>
-      <slot name="page-top" slot="top"/>
-      <slot name="page-bottom" slot="bottom"/>
-    </Page>
-  </div>
+      <v-btn icon to="/maths/">
+        <v-icon>school</v-icon>
+      </v-btn>
+
+      <v-btn icon to="/dev/">
+        <v-icon>computer</v-icon>
+      </v-btn>
+      <v-toolbar-title v-text="title"/>
+
+      <v-spacer></v-spacer>
+
+      <!-- <v-btn icon @click.stop="rightDrawer = !rightDrawer">
+        <v-icon>menu</v-icon>
+      </v-btn> -->
+    </v-toolbar>
+    <v-content>
+      <v-container>
+        <nuxt/>
+      </v-container>
+    </v-content>
+    <!-- <v-navigation-drawer :right="right" v-model="rightDrawer" temporary fixed>
+      <v-list>
+        <v-list-tile @click.native="right = !right">
+          <v-list-tile-action>
+            <v-icon light>compare_arrows</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer> -->
+    <v-footer :fixed="fixed" app>
+      <span>&copy; 2019 MIT David Couronné</span>
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
+
 export default {
   data() {
     return {
-      isSidebarOpen: false
+      activenav: 'secundary',
+      color: 'secondary',
+      clipped: true,
+      drawer: true,
+      fixed: false,
+      isSidebarOpen: false,
+      miniVariant: false,
+      right: true,
+      rightDrawer: false,
+      title: 'AcadeTech',
+      items: [
+          { icon: 'home', title: 'Accueil', to: '/' },
+          { icon: 'school', title: 'Mathématiques', to: '/maths' },
+          { icon: 'computer', title: 'Développement', to: '/dev' }
+        ],
     }
   },
-  methods: {
-    toggleSidebar(to) {
-      this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen
-    },
-    // side swipe
-    onTouchStart(e) {
-      this.touchStart = {
-        x: e.changedTouches[0].clientX,
-        y: e.changedTouches[0].clientY
-      }
-    },
-
-    onTouchEnd(e) {
-      const dx = e.changedTouches[0].clientX - this.touchStart.x
-      const dy = e.changedTouches[0].clientY - this.touchStart.y
-      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
-        if (dx > 0 && this.touchStart.x <= 80) {
-          this.toggleSidebar(true)
-        } else {
-          this.toggleSidebar(false)
-        }
-      }
+  computed: {
+    
+    scrollspy() {
+      return this.$store.state.page.scrollspy
     }
-  }
+  },
+  
 }
 </script>
-
-

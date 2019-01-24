@@ -1,9 +1,9 @@
 <template>
   <v-app>
-    <!-- <core-drawer :clipped="clipped" :drawer="drawer"/> -->
-    <v-navigation-drawer v-if="drawer" :clipped="true" fixed app>
+    
+    <v-navigation-drawer v-if="drawer" :clipped="clipped" fixed app>
       <v-list>
-        <core-scroll-spy v-if="scrollspy"/>
+        
         <v-list-tile
           v-for="(item, i) in items"
           :to="item.to"
@@ -28,41 +28,18 @@
     <v-toolbar :clipped-left="clipped" fixed app dark color="primary">
       <v-toolbar-side-icon @click="drawer = !drawer"/>
       
-
-      <v-btn icon to="/">
-        <v-icon>home</v-icon>
-      </v-btn>
-
-      <v-btn icon to="/maths/">
-        <v-icon>school</v-icon>
-      </v-btn>
-
-      <v-btn icon to="/dev/">
-        <v-icon>computer</v-icon>
-      </v-btn>
       <v-toolbar-title v-text="title"/>
 
       <v-spacer></v-spacer>
 
-      <!-- <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>menu</v-icon>
-      </v-btn> -->
+      
     </v-toolbar>
     <v-content>
       <v-container>
         <nuxt/>
       </v-container>
     </v-content>
-    <!-- <v-navigation-drawer :right="right" v-model="rightDrawer" temporary fixed>
-      <v-list>
-        <v-list-tile @click.native="right = !right">
-          <v-list-tile-action>
-            <v-icon light>compare_arrows</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer> -->
+    
     <v-footer :fixed="fixed" app>
       <span>&copy; 2019 MIT David Couronné</span>
     </v-footer>
