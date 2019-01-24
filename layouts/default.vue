@@ -24,16 +24,39 @@
     </v-navigation-drawer>
 
     <v-toolbar :clipped-left="clipped" fixed app dark color="primary">
-      <v-toolbar-side-icon @click="drawer = !drawer"/>
+      
       <v-btn
-          color="pink"
+          color="secundary"
           dark
           icon
           @click.stop="drawer = !drawer"
         ><v-icon>more_vert</v-icon>
         </v-btn>
+        <v-btn
+          dark
+          icon
+          router
+          exact
+          to="/"
+        ><v-icon>home</v-icon>
+        </v-btn><v-btn
+          dark
+          icon
+          router
+          exact
+          to="/maths"
+        ><v-icon>school</v-icon>
+        </v-btn>
+        <v-btn
+          dark
+          icon
+          router
+          exact
+          to="/dev"
+        ><v-icon>computer</v-icon>
+        </v-btn>
 
-      <v-toolbar-title v-text="title"/>
+      <!-- <v-toolbar-title v-text="title"/> -->
 
       <v-spacer></v-spacer>
     </v-toolbar>
