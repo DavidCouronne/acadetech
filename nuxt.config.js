@@ -43,7 +43,7 @@ module.exports = {
 
     //  '@/assets/styles/theme.styl', // Vuepress
 
-    'prismjs/themes/prism-dark.css'
+    'prismjs/themes/prism-dark.css',
     '@assets/stylus/main.styl', // Vuetify sauf _code
     // '@/assets/stylus/mini/theme.css', // Vuetify Mini Prepos
     // '@/assets/styles/code.styl'
