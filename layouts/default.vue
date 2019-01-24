@@ -93,10 +93,6 @@ export default {
       ]
     }
   },
-  /* computed: {
-    scrollspy() {
-      return this.$store.state.page.scrollspy
-    }
-  } */
+  
 }
 </script>
