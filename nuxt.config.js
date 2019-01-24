@@ -58,11 +58,11 @@ module.exports = {
     '@/plugins/vuetify',
     '@/plugins/contentful',
     // '~/plugins/global-components-loader.js',
-    {
+    /* {
       src: '@/plugins/scrollspy',
       ssr: false
 
-    }
+    } */
   ],
 
   /*
