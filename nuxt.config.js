@@ -17,6 +17,10 @@ module.exports = {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons'
       },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css'
+      },
 
       { rel: 'stylesheet',
         href: 'https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css',
@@ -40,7 +44,7 @@ module.exports = {
   //  '@/assets/styles/theme.styl', // Vuepress
 
     'prismjs/themes/prism-dark.css',
-     '@assets/stylus/main.styl', // Vuetify sauf _code
+     //'@assets/stylus/main.styl', // Vuetify sauf _code
    // '@/assets/stylus/mini/theme.css', // Vuetify Mini Prepos
     '@/assets/styles/code.styl'
     // '@assets/material/styles/index.scss'
