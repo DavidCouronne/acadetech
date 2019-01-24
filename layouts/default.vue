@@ -1,13 +1,7 @@
 <template>
   <v-app>
     <!-- <core-drawer :clipped="clipped" :drawer="drawer"/> -->
- <v-navigation-drawer
- v-if="drawer"
-     :clipped="true"
-      
-      
-      
-      fixed app>
+    <v-navigation-drawer v-if="drawer" :clipped="true" fixed app>
       <v-list>
         <core-scroll-spy v-if="scrollspy"/>
         <v-list-tile
@@ -31,36 +25,27 @@
       </v-list>
     </v-navigation-drawer>
 
-
-    <v-toolbar :clipped-left="clipped" fixed app dark color="primary" :z-index='20'>
+    <v-toolbar :clipped-left="clipped" fixed app dark color="primary" :z-index="20">
       <v-toolbar-side-icon @click="drawer = !drawer"/>
       <v-btn
-          color="pink"
-          dark
-          @click.stop="drawer = !drawer"
-          
-           @toggle-sidebar="$emit('toggle-sidebar')"
-        >
-          Toggle
-        </v-btn>
+        color="pink"
+        dark
+        @click.stop="drawer = !drawer"
+        @toggle-sidebar="$emit('toggle-sidebar')"
+      >Toggle</v-btn>
 
-      
-        <v-btn icon
-        to="/">
-          <v-icon>home</v-icon>
-        </v-btn>
+      <v-btn icon to="/">
+        <v-icon>home</v-icon>
+      </v-btn>
 
-        <v-btn icon
-        to="/maths/">
-          <v-icon>school</v-icon>
-        </v-btn>
+      <v-btn icon to="/maths/">
+        <v-icon>school</v-icon>
+      </v-btn>
 
-        <v-btn icon
-        to="/dev/">
-          <v-icon>computer</v-icon>
-        </v-btn>
-        <v-toolbar-title v-text="title"/>
-      
+      <v-btn icon to="/dev/">
+        <v-icon>computer</v-icon>
+      </v-btn>
+      <v-toolbar-title v-text="title"/>
 
       <v-spacer></v-spacer>
 
@@ -109,16 +94,16 @@ export default {
   },
   computed: {
     items() {
-    return themeConfig.nav
-},
+      return themeConfig.nav
+    },
     scrollspy() {
-  return this.$store.state.page.scrollspy
-}
+      return this.$store.state.page.scrollspy
+    }
   },
   methods: {
-    toggleSidebar (to) {
+    toggleSidebar(to) {
       this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen
-    },
+    }
   }
 }
 </script>
