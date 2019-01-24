@@ -2,7 +2,7 @@
   <v-app>
     <!-- <core-drawer :clipped="clipped" :drawer="drawer"/> -->
  <v-navigation-drawer
-     :clipped="clipped"
+     :clipped="true"
       v-model="drawer" 
       fixed app>
       <v-list>
@@ -31,6 +31,13 @@
 
     <v-toolbar :clipped-left="clipped" fixed app dark color="primary" :z-index='20'>
       <v-toolbar-side-icon @click="drawer = !drawer"/>
+      <v-btn
+          color="pink"
+          dark
+          @click.stop="drawer = !drawer"
+        >
+          Toggle
+        </v-btn>
 
       
         <v-btn icon
