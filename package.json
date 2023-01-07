@@ -23,7 +23,7 @@
     "markdown-it-katex-newcommand": "^1.0.7",
     "markdown-it-prism": "^2.0.1",
     "markdown-it-table-of-contents": "^0.4.3",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "vuetify": "^1.4.2"
   },
   "devDependencies": {
